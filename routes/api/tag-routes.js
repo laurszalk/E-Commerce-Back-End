@@ -13,19 +13,14 @@ router.get("/", (req, res) => {
   });
 });
 
-router
-  .get("/:id", (req, res) => {
-    // find a single tag by its `id`
-    // be sure to include its associated Product data
-
-    Tag.findOne({
-      where: { id: req.params.id },
-      include: [{ model: Product }],
-    });
-  })
-  .then((tag) => {
+router.get("/:id", (req, res) => {
+  Tag.findOne({
+    where: { id: req.params.id },
+    include: [{ model: Product }],
+  }).then((tag) => {
     res.json(tag);
   });
+});
 
 router.post("/", (req, res) => {
   // create a new tag
