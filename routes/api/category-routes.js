@@ -49,7 +49,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // this is the information od DATA coming from the CLIENT / REquest / Insomina
+  // this is the information od DATA coming from the CLIENT / Request / Insomina
   console.log("request: ", req.body);
   // create a new category
   Category.create(req.body)
